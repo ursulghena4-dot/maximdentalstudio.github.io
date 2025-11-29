@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Стоматолог Максим </title>
+
+
+
+  <link rel="stylesheet" href="style.css">
+    <!-- Иконки -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+    <!-- Наши стили (вынесены) -->
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=b6bf14d2-23a0-482f-9f51-9ee4c4f9e7dd&lang=ru_RU"></script>
+  <script src="main.js" defer></script>
+  
+  
+</head>
+<body>
+  
+  <script>
+    // тень/бордер при скролле
+    (function(){
+      const header = document.querySelector('.site-header');
+      const toggle = () => header.classList.toggle('is-scrolled', window.scrollY > 4);
+      toggle(); window.addEventListener('scroll', toggle, {passive:true});
+    })();
+    
+    // бургер-меню
+    (function(){
+      const nav = document.querySelector('.main-nav');
+      const btn = document.querySelector('.burger');
+      if(!nav || !btn) return;
+      btn.addEventListener('click', ()=>{
+        btn.classList.toggle('is-open');
+        nav.classList.toggle('is-open');
+      });
+    })();
+    </script>
+    
+
+  <!-- HEADER -->
+  <header class="site-header" id="top">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html">
+        <!-- ЛОГОТИП -->
+        <svg class="brand-mark" width="28" height="28" viewBox="0 0 24 24" aria-hidden="true">
+          <!-- контур зуба -->
+          <path d="M6.2 3.8c3.1-1.9 8.5-1.9 11.6 0 2.2 1.3 2.7 4.6 1.1 6.7-1.7 2.3-4.1 1.8-5.2 1.1-.6-.4-1.7-.4-2.3 0-1.1.7-3.5 1.2-5.2-1.1-1.6-2-1.1-5.3 1.0-6.7Z" fill="none" stroke="currentColor" stroke-width="1.4"/>
+          <!-- буква М внутри -->
+          <path d="M7.5 12.6l1.6-3.8 2 2.6 2-2.6 1.6 3.8" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="brand-name">MAXIM</span>
+        <span class="brand-sub">dental studio</span>
+      </a>
+  
+      <nav class="main-nav" aria-label="Главное меню">
+        <button class="burger" aria-label="Открыть меню">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-list">
+          <li><a href="#about" class="nav-link">Обо мне</a></li>
+          <li><a href="#prices" class="nav-link">Цены</a></li>
+          
+          <li><a href="#works" class="nav-link">Мои работы</a></li>
+          <li><a href="#reviews" class="nav-link">Отзывы</a></li>
+          <li><a href="#map-section" class="nav-link">Как пройти</a></li>
+          <a href="tel:+79991234567" class="nav-cta"> +7 (977) 414-40-07</a>
+        </ul>
+       
+      </nav>
+    </div>
+  </header>
+  
+
+ <!-- HERO / Главный экран -->
+<section class="hero-pro" id="home">
+  <!-- фон -->
+  <div class="hero-pro__bg" aria-hidden="true">
+    <div class="hero-pro__noise"></div>
+    <svg class="hero-pro__lines" viewBox="0 0 1200 300" preserveAspectRatio="none">
+      <path d="M-20 120 Q 200 60 420 120 T 860 120 T 1280 120" fill="none" stroke="rgba(0,0,0,.14)" stroke-width="3" stroke-linecap="round"/>
+      <path d="M-20 170 Q 200 110 420 170 T 860 170 T 1280 170" fill="none" stroke="rgba(0,0,0,.08)" stroke-width="2" stroke-linecap="round"/>
+      <path d="M-20 220 Q 200 160 420 220 T 860 220 T 1280 220" fill="none" stroke="rgba(0,0,0,.06)" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+  </div>
+
+  <div class="hero-pro__container">
+    <!-- текст -->
+    <div class="hero-pro__copy reveal up">
+      <h1>Ваша улыбка — наша забота</h1>
+      <p>Современная стоматология в центре Москвы. Технологии, комфорт и внимание к каждому пациенту.</p>
+      <div class="hero-pro__cta">
+        <a href="tel:+79991234567" class="nav-cta"> +7 (977) 414-40-07</a>
+
+        <a href="about.html" class="btn-ghost">Подробнее</a>
+      </div>
+    </div>
+
+    <!-- фото (параллакс) -->
+    <figure class="hero-pro__card reveal right" data-parallax>
+      <img src="/images/maxim.jpg" alt="Стоматолог" loading="eager">
+      <span class="gloss"></span>
+    </figure>
+  </div>
+</section>
+
+  
+
+  <section id="about" class="about-hero">
+    <div class="about-hero__container">
+      <!-- Слева: две фото-карточки -->
+      <div class="about-hero__media">
+        <div class="blob blob--orange"></div>
+        <div class="blob blob--violet"></div>
+  
+        <figure class="card card--a">
+          <img src="/images/doctorrr.png" alt="Стоматолог Максим" loading="lazy">
+        </figure>
+ 
+      </div>
+  
+   
+      <!-- Справа: компактный текст + чек-лист + кнопка -->
+      <div class="about-hero__content">
+        <h2 class="about-hero__title about-hero__title1 ">
+          Комфортное лечение <br>
+          <span>с заботой о каждом пациенте</span>
+        </h2>
+  
+        <p class="about-hero__lead">
+          10+ лет частной практики. Современные материалы,  понятные объяснения и аккуратная эстетика.
+        </p>
+  
+        <ul class="about-hero__list">
+          <li>Безболезненное лечение</li>
+          <li>Индивидуальный подход</li>
+          <li>Современные технологии</li>
+        </ul>
+  
+        <!-- ВАЖНО: ссылка ведёт на отдельную страницу -->
+        <a href="/about.html" class="btn-orange">Подробнее обо мне</a>
+      </div>
+    </div>
+  </section>
+  
+
+  
+  <section id="prices" class="ps">
+    <div class="ps__head">
+      <h2>Цены на услуги</h2>
+    </div>
+  
+    <div class="ps__grid">
+      <!-- 1. Терапия -->
+      <article class="ps-card">
+        <h3 class="ps-card__title">Терапия</h3>
+        <ul class="ps-list">
+          <li class="ps-item ps-item--more">
+            <details class="ps-acc">
+              <summary>
+                
+                <span class="ps-name">Лечение кариеса  <span class="ps-badge">от</span></span>
+                
+                <span class="ps-cost">6&nbsp;000 <i>₽</i></span>
+               
+              </summary>
+          
+              <ul class="ps-sublist">
+                <li>Поверхностный —  <span class="ps-cost">6&nbsp;000 <i>₽</i></span></li>
+                <li>Средний — <span class="ps-cost">7&nbsp;000 <i>₽</i></span></li>
+                <li>Глубокий —  <span class="ps-cost">8&nbsp;000 <i>₽</i></span></li>
+                <li>Лечение пришеечного кариеса -  <span class="ps-cost">5&nbsp;000 <i>₽</i></span></li>
+                <li>Лечение клиновидного дефекта -  <span class="ps-cost">5&nbsp;000 <i>₽</i></span></li>
+                <li>Лечение кариеса + клиновидный дефект - <span class="ps-cost">8&nbsp;000 <i>₽</i></span></li>
+                <li>Лечение пульпита за 4 канал  —  <span class="ps-cost">17&nbsp;500 <i>₽</i></span></li>
+              </ul>
+            </details>
+          </li>
+          
+          <li class="ps-item ps-item--more">
+            <details class="ps-acc">
+              <summary>
+                <span class="ps-name">Лечение пульпита <span class="ps-tag">хит</span></span>
+                <span class="ps-cost">10&nbsp;000 <i>₽</i></span>
+              </summary>
+          
+              <ul class="ps-sublist">
+                <li>Лечение пульпита за 1 канал  —  <span class="ps-cost">10&nbsp;000 <i>₽</i></span></li>
+                <li>Лечение пульпита за 2 канал  —  <span class="ps-cost">12&nbsp;500 <i>₽</i></span></li>
+                <li>Лечение пульпита за 3 канал  —  <span class="ps-cost">15&nbsp;000 <i>₽</i></span></li>
+                <li>Наложение лечебной прокладки -  <span class="ps-cost">&nbsp;500 <i>₽</i></span></li>
+
+                
+              </ul>
+            </details>
+          </li>
+          
+          <li class="ps-item ps-item--more">
+            <details class="ps-acc">
+              <summary>
+                <span class="ps-name">Пломбирование кариеса</span>
+                <span class="ps-cost">4&nbsp;000 <i>₽</i></span>
+              </summary>
+          
+              <ul class="ps-sublist">
+                <li>Световая пломба —  <span class="ps-cost">4&nbsp;000 <i>₽</i></span></li>
+                <li>Композит повышенной эстетики —  <span class="ps-cost">5&nbsp;000 <i>₽</i></span></li>
+                <li>Детская пломба —  <span class="ps-cost">3&nbsp;000 <i>₽</i></span></li>
+                
+              </ul>
+            </details>
+          </li>
+        </ul>
+      </article>
+
+
+<!-- ортопедия -->
+
+      <article class="ps-card">
+        <h3 class="ps-card__title">ОРТОПЕДИЯ</h3>
+        <ul class="ps-list">
+          <li class="ps-item ps-item--more">
+            <details class="ps-acc">
+              <summary>
+                
+                <span class="ps-name">Виниры керамические - 27000  <span class="ps-badge">от</span></span>
+                
+                <span class="ps-cost">27&nbsp;000 <i>₽</i></span>
+               
+              </summary>
+          
+              <ul class="ps-sublist">
+                <li>Поверхностный — 6&nbsp;000 ₽</li>
+                <li>Средний — 7&nbsp;000 ₽</li>
+                <li>Глубокий — 7&nbsp;000 ₽</li>
+              </ul>
+            </details>
+          </li>
+          
+          <li class="ps-item ps-item--more">
+            <details class="ps-acc">
+              <summary>
+                <span class="ps-name">Протезы <span class="ps-tag">хит</span></span>
+                <span class="ps-cost">10&nbsp;000 <i>₽</i></span>
+              </summary>
+          
+              <ul class="ps-sublist">
+                <li>Частичный съемный акриловый протез   — 35&nbsp;000 ₽</li>
+                <li>Нейлоновый частичный съемный протез - 45&nbsp;000 ₽</li>
+                <li>Толный съемный акриловый протез - 45&nbsp;000 ₽</li>
+                <li>Нейлоновый полный съемный протез - 50&nbsp;000 ₽</li>
+                <li>Бюгельный протез - 70&nbsp;000 ₽</li>
+                <li>Иммедиат протез(бабочка) - 10&nbsp;000 ₽</li>
+                <li>Починка съемного протеза - 10&nbsp;000 ₽</li>
+                <li>Приварка зуба к съемному протезу - 10000 (до трех зубов)
+                  (+ 2000 от трех зубов)&nbsp;000 ₽</li>
+              </ul>
+            </details>
+          </li>
+          
+          <li class="ps-item ps-item--more">
+            <details class="ps-acc">
+              <summary>
+                <span class="ps-name">Пломбирование кариеса</span>
+                <span class="ps-cost">4&nbsp;000 <i>₽</i></span>
+              </summary>
+          
+              <ul class="ps-sublist">
+                <li>Световая пломба — 4&nbsp;000 ₽</li>
+                <li>Композит повышенной эстетики — 5&nbsp;000 ₽</li>
+                <li>Детская пломба — 3&nbsp;000 ₽</li>
+              </ul>
+            </details>
+          </li>
+        </ul>
+      </article>
+  
+      <article class="ps-card">
+        <h3 class="ps-card__title">Другие услуги
+        </h3>
+        <ul class="ps-list">
+          <li class="ps-item ps-item--more">
+            <details class="ps-acc">
+              <summary>
+                
+                <span class="ps-name">Отбеливание зубов  <span class="ps-badge">от</span></span>
+                
+                <span class="ps-cost">6&nbsp;000 <i>₽</i></span>
+               
+              </summary>
+          
+              <ul class="ps-sublist">
+                <li>Профессиональное отбеливание эмали зубов с использованием
+                  системы последнего поколения ZOOM 4 - 40&nbsp;000 ₽</li>
+                <li>Курс домашнего отбеливания + изготовление индивидуальных
+                  капп (2 шт)
+                  5&nbsp;000 ₽</li>
+                <li>Комплекс:
+                  Профессиональная гигиена полости рта + отбеливание зубов
+                  ZOOM 4 - 44&nbsp;000 ₽</li>
+              </ul>
+            </details>
+          </li>
+          
+          <li class="ps-item ps-item--more">
+            <details class="ps-acc">
+              <summary>
+                <span class="ps-name">Профессиональная гигиена <span class="ps-tag">хит</span></span>
+                <span class="ps-cost">10&nbsp;000 <i>₽</i></span>
+              </summary>
+          
+              <ul class="ps-sublist">
+                <li>Комплексная профессиональная профилактическая гигиена полости
+                  рта (окрашивание налёта, ультразвук, Air-Flow, полировка,
+                  реминерализирующая терапия) - 5&nbsp;000 ₽</li>
+                
+              </ul>
+            </details>
+          </li>
+          
+          <li class="ps-item ps-item--more">
+            <details class="ps-acc">
+              <summary>
+                <span class="ps-name">Пломбирование кариеса</span>
+                <span class="ps-cost">4&nbsp;000 <i>₽</i></span>
+              </summary>
+          
+              <ul class="ps-sublist">
+                <li>Световая пломба — 4&nbsp;000 ₽ <span class="ps-cost">4&nbsp;000 <i>₽</i></span></li>
+                <li>Композит повышенной эстетики — 5&nbsp;000 ₽</li>
+                <li>Детская пломба — 3&nbsp;000 ₽</li>
+              </ul>
+            </details>
+          </li>
+        </ul>
+      </article>
+  
+      <article class="ps-card">
+        <h3 class="ps-card__title">Терапия</h3>
+        <ul class="ps-list">
+          <li class="ps-item ps-item--more">
+            <details class="ps-acc">
+              <summary>
+                
+                <span class="ps-name">Лечение кариеса  <span class="ps-badge">от</span></span>
+                
+                <span class="ps-cost">6&nbsp;000 <i>₽</i></span>
+               
+              </summary>
+          
+              <ul class="ps-sublist">
+                <li>Поверхностный — 6&nbsp;000 ₽</li>
+                <li>Средний — 7&nbsp;000 ₽</li>
+                <li>Глубокий — 7&nbsp;000 ₽</li>
+              </ul>
+            </details>
+          </li>
+          
+          <li class="ps-item ps-item--more">
+            <details class="ps-acc">
+              <summary>
+                <span class="ps-name">Лечение пульпита <span class="ps-tag">хит</span></span>
+                <span class="ps-cost">10&nbsp;000 <i>₽</i></span>
+              </summary>
+          
+              <ul class="ps-sublist">
+                <li>Лечение пульпита за 1 канал  — 10&nbsp;000 ₽</li>
+                <li>Лечение пульпита за 2 канал  — 12&nbsp;500 ₽</li>
+                <li>Лечение пульпита за 3 канал  — 15&nbsp;000 ₽</li>
+                <li>Лечение пульпита за 4 канал  — 17&nbsp;500 ₽</li>
+              </ul>
+            </details>
+          </li>
+          
+          <li class="ps-item ps-item--more">
+            <details class="ps-acc">
+              <summary>
+                <span class="ps-name">Пломбирование кариеса</span>
+                <span class="ps-cost">4&nbsp;000 <i>₽</i></span>
+              </summary>
+          
+              <ul class="ps-sublist">
+                <li>Световая пломба — 4&nbsp;000 ₽</li>
+                <li>Композит повышенной эстетики — 5&nbsp;000 ₽</li>
+                <li>Детская пломба — 3&nbsp;000 ₽</li>
+              </ul>
+            </details>
+          </li>
+        </ul>
+      </article>
+  
+  
+  
+    <div class="ps__cta">
+
+      <p class="ps-note">* Финальная стоимость определяется после диагностики.</p>
+    </div>
+  </section>
+  <section id="works" class="works works--cases">
+    <div class="container">
+  
+      <div class="works__head">
+        <h2>Мои работы</h2>
+        <p>Несколько примеров лечения до и после</p>
+      </div>
+  
+      <div class="works-grid">
+        <!-- ===== ПЕРВЫЕ 6 РАБОТ (видны сразу) ===== -->
+        <article class="work-card">
+          <div class="work-card__media">
+            <span class="work-pill work-pill--top">до</span>
+            <img src="/images/after1.jpg" alt="Отбеливание зубов — клинический случай 1" loading="lazy">
+            <span class="work-pill work-pill--bottom">после</span>
+          </div>
+          <div class="work-card__meta">
+            <h3>Отбеливание зубов</h3>
+          </div>
+        </article>
+  
+        <article class="work-card">
+          <div class="work-card__media">
+            <span class="work-pill work-pill--top">до</span>
+            <img src="/images/after2.jpg" alt="Отбеливание зубов — клинический случай 2" loading="lazy">
+            <span class="work-pill work-pill--bottom">после</span>
+          </div>
+          <div class="work-card__meta">
+            <h3>Отбеливание зубов</h3>
+          </div>
+        </article>
+  
+        <article class="work-card">
+          <div class="work-card__media">
+            <span class="work-pill work-pill--top">до</span>
+            <img src="/images/after3.jpg" alt="Отбеливание зубов — клинический случай 3" loading="lazy">
+            <span class="work-pill work-pill--bottom">после</span>
+          </div>
+          <div class="work-card__meta">
+            <h3>Отбеливание зубов</h3>
+          </div>
+        </article>
+  
+        <article class="work-card">
+          <div class="work-card__media">
+            <span class="work-pill work-pill--top">до</span>
+            <img src="/images/after4.jpg" alt="Отбеливание зубов — клинический случай 4" loading="lazy">
+            <span class="work-pill work-pill--bottom">после</span>
+          </div>
+          <div class="work-card__meta">
+            <h3>Отбеливание зубов</h3>
+          </div>
+        </article>
+  
+        <article class="work-card">
+          <div class="work-card__media">
+            <span class="work-pill work-pill--top">до</span>
+            <img src="/images/after5.jpg" alt="Отбеливание зубов — клинический случай 5" loading="lazy">
+            <span class="work-pill work-pill--bottom">после</span>
+          </div>
+          <div class="work-card__meta">
+            <h3>Отбеливание зубов</h3>
+          </div>
+        </article>
+  
+        <article class="work-card">
+          <div class="work-card__media">
+            <span class="work-pill work-pill--top">до</span>
+            <img src="/images/after6.jpg" alt="Отбеливание зубов — клинический случай 6" loading="lazy">
+            <span class="work-pill work-pill--bottom">после</span>
+          </div>
+          <div class="work-card__meta">
+            <h3>Отбеливание зубов</h3>
+          </div>
+        </article>
+  
+        <!-- ===== ЕЩЁ 6 РАБОТ (скрыты по умолчанию) ===== -->
+        <article class="work-card work-card--extra">
+          <div class="work-card__media">
+            <span class="work-pill work-pill--top">до</span>
+            <img src="/images/after7.jpg" alt="Эстетическая реставрация — случай 1" loading="lazy">
+            <span class="work-pill work-pill--bottom">после</span>
+          </div>
+          <div class="work-card__meta">
+            <h3>Эстетическая реставрация</h3>
+          </div>
+        </article>
+  
+        <article class="work-card work-card--extra">
+          <div class="work-card__media">
+            <span class="work-pill work-pill--top">до</span>
+            <img src="/images/after8.jpg" alt="Эстетическая реставрация — случай 2" loading="lazy">
+            <span class="work-pill work-pill--bottom">после</span>
+          </div>
+          <div class="work-card__meta">
+            <h3>Эстетическая реставрация</h3>
+          </div>
+        </article>
+  
+        <article class="work-card work-card--extra">
+          <div class="work-card__media">
+            <span class="work-pill work-pill--top">до</span>
+            <img src="/images/after9.jpg" alt="Виниры — случай 1" loading="lazy">
+            <span class="work-pill work-pill--bottom">после</span>
+          </div>
+          <div class="work-card__meta">
+            <h3>Виниры</h3>
+          </div>
+        </article>
+  
+        <article class="work-card work-card--extra">
+          <div class="work-card__media">
+            <span class="work-pill work-pill--top">до</span>
+            <img src="/images/after10.jpg" alt="Виниры — случай 2" loading="lazy">
+            <span class="work-pill work-pill--bottom">после</span>
+          </div>
+          <div class="work-card__meta">
+            <h3>Виниры</h3>
+          </div>
+        </article>
+  
+        <article class="work-card work-card--extra">
+          <div class="work-card__media">
+            <span class="work-pill work-pill--top">до</span>
+            <img src="/images/after11.jpg" alt="Реставрация передних зубов — случай 1" loading="lazy">
+            <span class="work-pill work-pill--bottom">после</span>
+          </div>
+          <div class="work-card__meta">
+            <h3>Реставрация передних зубов</h3>
+          </div>
+        </article>
+  
+        <article class="work-card work-card--extra">
+          <div class="work-card__media">
+            <span class="work-pill work-pill--top">до</span>
+            <img src="/images/after12.jpg" alt="Реставрация передних зубов — случай 2" loading="lazy">
+            <span class="work-pill work-pill--bottom">после</span>
+          </div>
+          <div class="work-card__meta">
+            <h3>Реставрация передних зубов</h3>
+          </div>
+        </article>
+      </div>
+  
+      <button class="works-more-btn" id="worksMoreBtn">
+        Показать ещё работы
+      </button>
+  
+    </div>
+  </section>
+  
+  
+  
+
+  <section id="reviews" class="reviews">
+    <div class="container">
+  
+      <!-- верх: обычные отзывы -->
+      <div class="reviews__head">
+        <h2>Отзывы пациентов</h2>
+        <p>Небольшая часть отзывов о лечении, реставрации и отбеливании.</p>
+      </div>
+  
+  
+      <!-- низ: видео-отзывы -->
+
+      <div class="reviews__videos" id="reviewsVideos">
+        <!-- ВИДЕО -->
+        <article class="reviews-video-card" data-video="https://rutube.ru/play/embed/https://rutube.ru/video/private/e15e17979a53863be9e6ce6248872dd6/?p=Zd15_lKH7mIYUUmXaq21-Q">
+          <div class="reviews-video-card__inner">
+            <img src="/images/maxim.jpg" alt="">
+            <span class="reviews-video-card__label reviews-video-card__label--video">Видео</span>
+            <button class="reviews-video-card__play" type="button">▶</button>
+          </div>
+          <p class="reviews-video-card__caption">Анастасия — реставрация и отбеливание</p>
+        </article>
+      
+        <article class="reviews-video-card" data-video="https://rutube.ru/play/embed/https://rutube.ru/shorts/df4f20733d68c1ba847c3725e9b031a8/">
+          <div class="reviews-video-card__inner">
+            <img src="/images//maxim.jpg" alt="">
+            <span class="reviews-video-card__label reviews-video-card__label--video">Видео</span>
+            <button class="reviews-video-card__play" type="button">▶</button>
+          </div>
+          <p class="reviews-video-card__caption">Максим — имплантация и протезирование</p>
+        </article>
+      
+        <!-- ФОТО-ОТЗЫВ -->
+        <article class="reviews-video-card reviews-video-card--photo">
+          <div class="reviews-video-card__inner">
+            <img src="/images/otziv.jpg" alt="">
+            <span class="reviews-video-card__label reviews-video-card__label--photo">Фото</span>
+            <!-- без кнопки ▶ и без data-video -->
+          </div>
+          <p class="reviews-video-card__caption">Мария — результат после комплексного лечения</p>
+        </article>
+      
+        <!-- можешь добавить ещё фото/видео по этому же шаблону -->
+      </div>
+      
+    </div>
+  
+
+  </section>
+  
+  
+
+
+
+
+
+  <!-- ВИДЖЕТ -->
+  <div class="wa-style-widget" id="waWidget">
+    <button class="fab-btn wa" id="waBtn" type="button" title="Написать в WhatsApp">
+      <svg viewBox="0 0 24 24" aria-hidden="true" width="24" height="24">
+        <path fill="currentColor" d="M20.52 3.48A11.94 11.94 0 0 0 12 0C5.37 0 .02 5.35.02 11.97c0 2.11.55 4.09 1.6 5.87L0 24l6.23-1.63a11.97 11.97 0 0 0 5.77 1.48h.01c6.63 0 12-5.35 12-11.97 0-3.2-1.26-6.2-3.49-8.4ZM12 21.34h-.01a9.96 9.96 0 0 1-5.08-1.39l-.36-.21-3.69.96.99-3.6-.24-.37A9.91 9.91 0 0 1 2.03 12C2.03 6.94 6.94 2.03 12 2.03c2.65 0 5.14 1.03 7.02 2.9a9.91 9.91 0 0 1 2.94 7.06c0 5.05-4.91 9.95-9.96 9.95Zm5.49-7.4c-.3-.15-1.78-.88-2.06-.98-.27-.1-.46-.15-.64.14l-.94 1.17c-.17.2-.34.22-.63.08-.3-.15-1.27-.47-2.42-1.48-.9-.79-1.5-1.76-1.68-2.06-.18-.3-.02-.46.13-.61.14-.13.3-.33.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.68-1.6-.93-2.19-.25-.58-.49-.5-.68-.5l-.58-.01c-.2 0-.53.07-.81.37-.28.29-1.06 1.02-1.06 2.49 0 1.47 1.08 2.9 1.22 3.08.15.19 2.11 3.21 5.11 4.5.71.31 1.27.5 1.71.64.72.23 1.38.19 1.9.12.58-.08 1.79-.72 2.05-1.43.26-.71.26-1.3.18-1.45-.08-.15-.29-.24-.59-.39Z"/>
+      </svg>
+      
+    </button>
+    <button class="fab-btn tg" id="tgBtn" type="button" title="Открыть Telegram">
+      <svg viewBox="0 0 24 24" aria-hidden="true" width="24" height="24">
+        <circle cx="12" cy="12" r="12" fill="currentColor" opacity=".12"/>
+        <path fill="currentColor" d="M9.04 14.67l-.38 5.29c.54 0 .77-.23 1.05-.5l2.51-2.41 5.2 3.81c.95.53 1.64.25 1.9-.89l3.44-16.1c.3-1.42-.51-1.98-1.44-1.63L1.34 9.51c-1.38.54-1.36 1.31-.23 1.66l5.31 1.66L18.93 5.7c.54-.35 1.03-.16.63.2l-7.91 7.11c-.22.19-.5.3-.8.29l-1.81-.06Z"/>
+      </svg>
+      
+      
+    </button>
+
+    <div class="wa-panel" id="waPanel" role="dialog" aria-modal="true" aria-label="Выбор сообщения">
+      <div class="wa-panel__header">
+        <div class="hdr-left">
+          <div class="avatar" id="avatarInitials">MI</div>
+          <div class="name">
+            <strong id="doctorName">Стоматолог Максим</strong>
+            <span>онлайн</span>
+          </div>
+        </div>
+        <button class="panel-close" id="panelClose" type="button" aria-label="Закрыть">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+    
+      <div class="wa-panel__chips" id="chips"></div>
+
+      <div class="wa-panel__composer" id="composer" hidden>
+      
+        <div class="composer-actions">
+
+        </div>
+      </div>
+
+      <div class="wa-panel__messages" id="msgList" role="menu" aria-label="Шаблоны сообщений"></div>
+
+      <div class="wa-panel__footer">
+        <small>Выберите готовое сообщение — мы подставим текст и откроем чат в WhatsApp.</small>
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- MAP -->
+
+  <section id="map-section" class="section">
+    <div class="container">
+      <h2>Как пройти от метро «Марксистская»</h2>
+  
+      <div class="sb-map">
+        <div id="map" style="width:100%;height:420px;"></div>
+        <div class="sb-map__legend">
+          <span class="lg lg--metro">Марксистская, выход 5</span>
+          
+        </div>
+        <button id="btn-open-yandex" class="sb-map__btn" type="button">Открыть карту</button>
+      </div>
+    </div>
+  </section>
+  
+  <script>
+    (function waitYmaps(){
+      if (window.ymaps && typeof ymaps.ready === 'function') {
+        ymaps.ready(initMap);
+      } else {
+        setTimeout(waitYmaps, 50);
+      }
+    })();
+    function initMap() {
+  const metroExit = [55.740510, 37.656369];
+  const clinic    = [55.738670, 37.659549];
+
+  const map = new ymaps.Map('map', {
+    center: [(metroExit[0]+clinic[0])/2, (metroExit[1]+clinic[1])/2],
+    zoom: 16,
+    controls: ['zoomControl','fullscreenControl']
+  }, { suppressMapOpenBlock: true });
+
+  // Поведение
+  map.behaviors.disable('scrollZoom');  // колесико мыши
+  map.behaviors.enable('multiTouch');   // pinch / touch
+  map.behaviors.enable('drag');
+  map.behaviors.enable('dblClickZoom');
+
+  const route = new ymaps.multiRouter.MultiRoute({
+    referencePoints: [metroExit, clinic],
+    params: { routingMode: 'pedestrian' }
+  }, {
+    wayPointVisible:false, viaPointVisible:false,
+    routeStrokeColor:"#FF8A00", routeStrokeWidth:6
+  });
+
+  const metroPlacemark  = new ymaps.Placemark(metroExit,{ balloonContent:'🚇 Марксистская, выход 5' },{ preset:'islands#blueCircleIcon' });
+  const clinicPlacemark = new ymaps.Placemark(clinic,{ balloonContent:'🏥 Smile Concept' },{ preset:'islands#redMedicalIcon' });
+
+  map.geoObjects.add(route).add(metroPlacemark).add(clinicPlacemark);
+
+  route.model.events.add('requestsuccess',()=>{
+    map.setBounds(route.getBounds(),{checkZoomRange:true,zoomMargin:40});
+  });
+
+  document.getElementById('btn-open-yandex')?.addEventListener('click',()=>{
+    window.open(`https://yandex.ru/maps/?rtext=${metroExit.join(',')}~${clinic.join(',')}&rtt=pd`,'_blank');
+  });
+}
+
+
+    </script>
+    
+
+  
+
+
+ 
+  
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Тень/бордер при скролле
+      const header = document.querySelector('.site-header');
+      if (header) {
+        const toggle = () => header.classList.toggle('is-scrolled', window.scrollY > 4);
+        toggle();
+        window.addEventListener('scroll', toggle, { passive: true });
+      }
+    
+      // Бургер-меню
+      const nav = document.querySelector('.main-nav');
+      const btn = document.querySelector('.burger');
+      if (nav && btn) {
+        btn.addEventListener('click', () => {
+          btn.classList.toggle('is-open');
+          nav.classList.toggle('is-open');
+        });
+      }
+    
+      // Fallback для .reveal (на случай, если другой reveal-скрипт не сработал)
+      document.querySelectorAll('.reveal').forEach(el => el.classList.add('in-view'));
+    });
+    </script>
+    <script>
+      const slider = document.getElementById('reviewsSlider');
+      const leftBtn = document.getElementById('arrowLeft');
+      const rightBtn = document.getElementById('arrowRight');
+    
+      function updateArrows() {
+        const maxScroll = slider.scrollWidth - slider.clientWidth;
+        leftBtn.classList.toggle('disabled', slider.scrollLeft <= 0);
+        rightBtn.classList.toggle('disabled', slider.scrollLeft >= maxScroll - 5);
+      }
+    
+      leftBtn.addEventListener('click', () => {
+        slider.scrollBy({ left: -slider.clientWidth * 0.8, behavior: 'smooth' });
+        setTimeout(updateArrows, 400);
+      });
+    
+      rightBtn.addEventListener('click', () => {
+        slider.scrollBy({ left: slider.clientWidth * 0.8, behavior: 'smooth' });
+        setTimeout(updateArrows, 400);
+      });
+    
+      slider.addEventListener('scroll', updateArrows);
+      window.addEventListener('resize', updateArrows);
+      updateArrows();
+    </script>
+   <footer class="footer">
+    <div class="container">
+      <p>© 2025 Стоматолог Максим. Все права защищены.</p>
+      <p>Телефон: <a href="tel:+79803617809">+7 (977) 414-40-07</a> · Москва</p>
+    </div>
+  </footer>
+</body>
+</html>

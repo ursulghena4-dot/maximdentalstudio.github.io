@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Обо мне — MAXIM Dental Studio</title>
+  <link rel="stylesheet" href="about.css">
+  <link rel="stylesheet" href="style.css">
+ 
+</head>
+<body>
+
+  <header class="site-header" id="top">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html">
+        <!-- ЛОГОТИП -->
+        <svg class="brand-mark" width="28" height="28" viewBox="0 0 24 24" aria-hidden="true">
+          <!-- контур зуба -->
+          <path d="M6.2 3.8c3.1-1.9 8.5-1.9 11.6 0 2.2 1.3 2.7 4.6 1.1 6.7-1.7 2.3-4.1 1.8-5.2 1.1-.6-.4-1.7-.4-2.3 0-1.1.7-3.5 1.2-5.2-1.1-1.6-2-1.1-5.3 1.0-6.7Z" fill="none" stroke="currentColor" stroke-width="1.4"/>
+          <!-- буква М внутри -->
+          <path d="M7.5 12.6l1.6-3.8 2 2.6 2-2.6 1.6 3.8" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="brand-name">MAXIM</span>
+        <span class="brand-sub">dental studio</span>
+      </a>
+  
+      <nav class="main-nav" aria-label="Главное меню">
+        <button class="burger" aria-label="Открыть меню">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-list">
+          <li><a href="index.html#about" class="nav-link">Обо мне</a></li>
+          <li><a href="index.html#prices" class="nav-link">Цены</a></li>
+          
+          <li><a href="index.html#works" class="nav-link">Мои работы</a></li>
+          <li><a href="index.html#reviews" class="nav-link">Отзывы</a></li>
+          <li><a href="index.html#map-section" class="nav-link">Как пройти</a></li>
+          <a href="tel:+79991234567" class="nav-cta">+7 (977) 414-40-07</a>
+        </ul>
+       
+      </nav>
+    </div>
+  </header>
+  <!-- Кнопка "Назад на главную" -->
+  <a class="back-home" href="/index.html" aria-label="Вернуться на главную">← На главную</a>
+
+  <!-- Герой-блок с лёгким параллакс-tilt -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-text">
+        <h1>Доктор Максим — <br> современная стоматология без боли</h1>
+        <p class="lead">
+          Более 10 лет практики. Индивидуальные планы лечения, бережная анестезия,
+          аккуратная эстетика и понятные объяснения на каждом шаге.
+        </p>
+
+        <ul class="hero-stats">
+          <li><strong>7+ лет</strong><span>частной практики</span></li>
+          <li><strong>1200+</strong><span>кейсов в год</span></li>
+          <li><strong>4.9/5</strong><span>рейтинг пациентов</span></li>
+          <li><strong>0%</strong><span>боли по отзывам</span></li>
+        </ul>
+
+        <div class="hero-actions">
+          <a href="tel:+79991234567" class="nav-cta">+7 (977) 414-40-07</a>
+
+          <a href="#approach" class="btn-secondary">Мой подход</a>
+        </div>
+      </div>
+
+      <div class="hero-photo tilt-card" aria-hidden="true">
+        <img src="/images/maxim.jpg" alt="Доктор Максим в кабинете" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Подход -->
+  <section id="approach" class="approach">
+    <div class="container">
+      <h2>Мой подход</h2>
+
+      <div class="approach-grid">
+        <article class="card">
+          <h3>Диагностика</h3>
+          <p>Тщательный осмотр, фото-протокол, рентген-контроль. Обсуждаем цели и риски, вместе выбираем план лечения.</p>
+        </article>
+
+        <article class="card">
+          <h3>Комфорт</h3>
+          <p>Современная анестезия, бережные методики и мягкая коммуникация — я заранее объясняю каждый следующий шаг.</p>
+        </article>
+
+        <article class="card">
+          <h3>Эстетика</h3>
+          <p>Естественный цвет, форма и пропорции. Использую износостойкие материалы и изоляцию поля (коффердам).</p>
+        </article>
+
+        <article class="card">
+          <h3>Контроль качества</h3>
+          <p>Промежуточные фото, проверка окклюзии, гигиенические рекомендации, пост-осмотры и поддержка после лечения.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Дипломы и сертификаты -->
+  <section id="diplomas" class="diplomas">
+    <div class="container">
+      <h2>Дипломы и сертификаты</h2>
+  
+      <p class="note">Нажмите на карточку, чтобы открыть и пролистать.</p>
+  
+      <div class="diploma-grid">
+        <a class="diploma-item" href="/images/diplom1.jpg"
+           data-caption="МГМСУ им. А.И. Евдокимова — Диплом врача-стоматолога (Москва)">
+          <img src="/images/diplom1.jpg" alt="ФГБОУ ВО «МГМСУ им. А.И. Евдокимова» Минздрава России, Москва">
+          <span>ДИПЛОМ   СПЕЦИАЛИСТА   С ОТЛИЧИЕМ</span>
+          <small>ФГБОУ ВО «МГМСУ им. А.И. Евдокимова» Минздрава России, Москва</small>
+        </a>
+  
+        <a class="diploma-item" href="/images/diplom2.jpg"
+           data-caption="Интернатура по терапевтической стоматологии — МГМСУ">
+          <img src="/images/diplom2.jpg" alt="ФГБУ «ГНЦ РФ – ФМБЦ им. А.И. Бурназяна», Москва">
+          <span>ДИПЛОМОБ ОКОНЧАНИИ ОРДИНАТУРЫ</span>
+          <small>ФГБУ «ГНЦ РФ – ФМБЦ им. А.И. Бурназяна», Москва</small>
+        </a>
+  
+        <a class="diploma-item" href="/images/diplom3.jpg"
+           data-caption="Курс эстетической реставрации — Digital Smile Design">
+          <img src="images/diplom3.jpg" alt="Курс по системе Multi-Unit абатментов: хирургический, ортопедический и лабораторный этапы (цифровой и аналоговый протоколы">
+          <span>СЕРТИФИКАТ</span>
+          <small>Курс по системе Multi-Unit абатментов: хирургический, ортопедический и лабораторный этапы (цифровой и аналоговый протоколы)</small>
+        </a>
+  
+        <a class="diploma-item" href="/images/diplom4.jpg"
+           data-caption="Эндодонтия под микроскопом — непрямая реставрация">
+          <img src="/images/diplom4.jpg" alt="ЭОРТОПЕДИЧЕСКИ ОРИЕНТИРОВАННАЯ ИМПЛАНТАЦИЯ">
+          <span>СЕРТИФИКАТ</span>
+          <small>ОРТОПЕДИЧЕСКИ ОРИЕНТИРОВАННАЯ ИМПЛАНТАЦИЯ</small>
+        </a>
+        <a class="diploma-item" href="/images/diplom5.jpg"
+        data-caption="Гигиена и профилактика — международный курс">
+       <img src="images/diplom5.jpg" alt="ИМПЛАНТАТЫ. ОРТОПЕДИЧЕСКИЙ ВЗГЛЯД">
+       <span>СЕРТИФИКАТ</span>
+       <small>ИМПЛАНТАТЫ. ОРТОПЕДИЧЕСКИЙ ВЗГЛЯД</small>
+     </a>
+        <a class="diploma-item" href="/images/diplom6.jpg"
+           data-caption="Гигиена и профилактика — международный курс">
+          <img src="images/diplom6.jpg" alt="Курс по прямой реставрации зубов: восстановление фронтальной группы и современные эстетические материалы">
+          <span>СЕРТИФИКАТ</span>
+          <small>Курс по прямой реставрации зубов: восстановление фронтальной группы и современные эстетические материалы</small>
+        </a>
+        <a class="diploma-item" href="/images/diplom7.jpg">
+          <img src="/images/diplom7.jpg" alt="">
+          <span>СЕРТИФИКАТ ВЫСШАЯ ШКОЛА СТОМАТОЛОГИИ</span>
+          <small>ВЫСОКОТОЧНОЕ СЪЕМНОЕ ПРОТЕЗИРОВАНИЕ</small>
+        </a>
+        
+        <a class="diploma-item" href="/images/diplom8.jpg">
+          <img src="/images/diplom8.jpg" alt="">
+          <span>СЕРТИФИКАТ</span>
+          <small>Курс Протокол ортопедического лечения: аналоговые и цифровые технологии</small>
+        </a>
+        
+        <a class="diploma-item" href="/images/diplom9.jpg">
+          <img src="/images/diplom9.jpg" alt="">
+          <span>СЕРТИФИКАТ</span>
+          <small>Клинические аспекты несъемного
+            протезирования - от планирования до фиксации</small>
+        </a>
+        
+        <a class="diploma-item" href="/images/diplom10.jpg">
+          <img src="/images/diplom10.jpg" alt="">
+          <span>Certificate
+            of achievement</span>
+          <small>Курс «Сохранение зубов» (3 часа теории, Bend Stomatology)</small>
+        </a>
+        
+      </div>
+    </div>
+  </section>
+  
+
+<!-- Лайтбокс для дипломов -->
+<!-- Лайтбокс для дипломов -->
+<div class="diploma-lightbox" id="diplomaLightbox" aria-hidden="true">
+  <div class="diploma-lightbox__backdrop" id="diplomaBackdrop"></div>
+
+  <div class="diploma-lightbox__dialog" role="dialog" aria-modal="true" aria-label="Просмотр дипломов">
+    <button class="diploma-lightbox__close" id="diplomaClose" aria-label="Закрыть">
+      &times;
+    </button>
+
+    <button class="diploma-lightbox__arrow diploma-lightbox__arrow--prev" id="diplomaPrev" aria-label="Предыдущий диплом">
+      &#10094;
+    </button>
+
+    <figure class="diploma-lightbox__figure">
+      <img id="diplomaLargeImage" src="" alt="">
+      <figcaption id="diplomaCaption"></figcaption>
+    </figure>
+
+    <button class="diploma-lightbox__arrow diploma-lightbox__arrow--next" id="diplomaNext" aria-label="Следующий диплом">
+      &#10095;
+    </button>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <p>© 2025 Стоматолог Максим. Все права защищены.</p>
+    <p>Телефон: <a href="tel:+79803617809">+7 (977) 414-40-07</a> · Москва</p>
+  </div>
+</footer>
+<!-- УДАЛИ about.fixed.js, если он не нужен -->
+<script src="main.js" defer></script>
+<script src="/about.js" defer></script>
+
+</body>
+</html>
